@@ -52,7 +52,13 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- LSP
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts) -- Format
+keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts) -- Code Action
+keymap("n", "<leader>li", "<cmd>LspInfo<cr>", opts) -- LSP Info
+keymap("n", "<leader>lj", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+keymap("n", "<leader>lk", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
+keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", opts) -- Quickfix
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 
 -------------------
 -- PLUGIN KEYBIND
